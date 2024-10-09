@@ -1,0 +1,79 @@
+
+
+/* Main Section */
+.page {
+    padding: 40px 20px;
+}
+
+/* Lista de Amigos Peludos */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    color: #54B5BE;
+    margin-bottom: 20px;
+}
+
+/* Table Styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+.tableHead {
+    background-color: #54B5BE;
+    color: white;
+}
+
+.tableHead th {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    color: #333; /* Asegura que el texto sea visible */
+}
+
+.table td img {
+    border-radius: 5px;
+}
+
+.table td a {
+    text-decoration: none;
+    color: #DC3464; /* Color del texto de los botones */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: inline-block;
+    background-color: transparent; /* Fondo transparente para los botones */
+    border: 1px solid transparent; /* Borde transparente para los botones */
+}
+
+.table td a:hover {
+    text-decoration: underline;
+    background-color: #f0f0f0;
+    border-color: #ddd; /* Color del borde al pasar el mouse */
+}
+
+/* Button Styles */
+.btn {
+    background-color: #DC3464;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #c12b55;
+}
+

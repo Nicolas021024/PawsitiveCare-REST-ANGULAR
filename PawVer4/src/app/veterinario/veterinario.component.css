@@ -1,0 +1,55 @@
+.veterinario-container {
+    text-align: center; /* Centramos el contenido */
+    margin-top: 20px;
+  }
+  
+  .veterinario-info img {
+    border-radius: 50%; /* Imagen en forma circular */
+    width: 150px; /* Tamaño de la imagen */
+    height: 150px; /* Tamaño de la imagen */
+    object-fit: cover; /* Para asegurarnos de que la imagen mantenga sus proporciones */
+    margin-bottom: 20px;
+  }
+  
+  .veterinario-info h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+  
+  .opciones-container {
+    display: flex; /* Hacemos que las opciones estén una al lado de la otra */
+    justify-content: center; /* Centramos las opciones */
+    gap: 40px; /* Espacio entre las dos opciones */
+  }
+  
+  .opcion {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px; /* Ancho fijo para cada opción */
+    text-align: left;
+  }
+  
+  .opcion h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .opcion p {
+    margin-bottom: 20px;
+  }
+  
+  .opcion button {
+    background-color: #54B5BE; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 10px 15px; /* Espaciado del botón */
+    font-size: 16px; /* Tamaño de la fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  }
+  
+  .opcion button:hover {
+    background-color: #459ca5; /* Cambia de color cuando pasas el mouse */
+  }
+  

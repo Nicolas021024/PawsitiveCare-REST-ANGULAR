@@ -1,0 +1,32 @@
+<div class="veterinario-container">
+    <div class="veterinario-info">
+        <div *ngIf="veterinario"></div>
+        <img [src]="veterinario?.foto" alt="Foto veterinario" class="img-fluid" height="150px" width="150px">
+        <h2>Bienvenido, {{ veterinario?.nombre }}</h2>
+
+    </div>
+  
+    <div class="opciones-container">
+      <!-- Opción 1: Ver Mascotas -->
+      <div class="opcion">
+        <h3>Ver Mascotas</h3>
+        <p>Aquí puedes ver todas las mascotas bajo tu cuidado y administrar su información.</p>
+        <button (click)="irAVerMascotas()">Ver Mascotas</button>
+      </div>
+  
+      <!-- Opción 2: Registrar Tratamiento -->
+      <div class="opcion">
+        <h3>Registrar Tratamiento</h3>
+        <p>Registra los tratamientos aplicados a las mascotas bajo tu cuidado.</p>
+        <button (click)="irARegistrarTratamiento()">Registrar Tratamiento</button>
+      </div>
+
+<!-- Opción 2: Registrar Tratamiento -->
+      <div class="opcion">
+        <h3>Ver Cliente</h3>
+        <p>Aquí puedes ver todos clietes y administrar su información.</p>
+        <button (click)="irAVerClientes()">Ver Cliente</button>
+      </div>
+    </div>
+  </div> 
+  

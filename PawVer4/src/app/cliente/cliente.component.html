@@ -1,0 +1,28 @@
+<main class="container">
+    <h1>Bienvenido, {{ authService.getCurrentUser()?.nombre }}</h1>
+    <h2>Lista de tus mascotas</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Foto</th>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Raza</th>
+                <th>Enfermedad</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let mascota of mascotas">
+                <td><img [src]="mascota.foto" alt="{{ mascota.nombre }}" width="50"></td>
+                <td>{{ mascota.id }}</td>
+                <td>{{ mascota.nombre }}</td>
+                <td>{{ mascota.edad }}</td>
+                <td>{{ mascota.raza }}</td>
+                <td>{{ mascota.enfermedad }}</td>
+                <td>{{ mascota.estado ? 'Activo' : 'Inactivo' }}</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
