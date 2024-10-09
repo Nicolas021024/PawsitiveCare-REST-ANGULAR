@@ -1,0 +1,44 @@
+/* Estilos generales para el contenedor del cliente */
+.container {
+    margin: 40px auto; /* Margen superior e inferior de 40px y centrado */
+    padding: 20px; /* Espacio interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #ffffff; /* Fondo blanco */
+}
+
+/* Estilos para el título */
+h1 {
+    text-align: center; /* Centrar el texto */
+    color: #54B5BE; /* Color para el encabezado principal */
+}
+
+h2 {
+    color: #E91E63; /* Color del título */
+    text-align: center; /* Centrar el texto */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+/* Estilos para la tabla */
+.table {
+    width: 100%; /* Ancho completo */
+    border-collapse: collapse; /* Colapsar bordes */
+}
+
+.table th, .table td {
+    padding: 12px; /* Espacio interno de celdas */
+    text-align: left; /* Alinear texto a la izquierda */
+    border-bottom: 1px solid #ddd; /* Línea de separación */
+}
+
+.table th {
+    background-color: #E91E63; /* Fondo del encabezado */
+    color: white; /* Color del texto del encabezado */
+}
+
+/* Estilos para las imágenes de las mascotas */
+img {
+    border-radius: 4px; /* Bordes redondeados en las imágenes */
+    max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de aspecto de las imágenes */
+}

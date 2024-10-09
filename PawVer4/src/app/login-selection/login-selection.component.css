@@ -1,0 +1,34 @@
+/* Estilos para encabezados */
+h2 {
+    text-align: center; /* Centra el texto del encabezado */
+    margin-bottom: 20px; /* Espacio debajo del encabezado */
+}
+
+/* Estilos generales para botones */
+.btn {
+    display: block; /* Hace que el botón ocupe un bloque completo */
+    width: 200px; /* Ancho fijo del botón */
+    margin: 10px auto; /* Centra el botón horizontalmente */
+    padding: 10px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño de fuente del texto del botón */
+    border: none; /* Sin borde por defecto */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+/* Estilo para botón primario */
+.btn-primary {
+    background-color: #DC3464; /* Color de fondo */
+    color: white; /* Color del texto */
+}
+
+/* Estilo para botón secundario */
+.btn-secondary {
+    background-color: #6c757d; /* Color de fondo secundario */
+    color: white; /* Color del texto */
+}
+
+/* Efecto de hover para botones */
+.btn:hover {
+    opacity: 0.9; /* Reduce la opacidad al pasar el cursor */
+}

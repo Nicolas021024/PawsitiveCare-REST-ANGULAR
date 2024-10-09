@@ -1,0 +1,15 @@
+<!-- login-cliente.component.html -->
+<main>
+    <div class="login">
+      <div class="login-container">
+        <h2>Iniciar Sesión como Cliente</h2>
+        <form (ngSubmit)="onSubmit()">
+          <label for="cedula">Cédula:</label>
+          <input type="text" id="cedula" [(ngModel)]="cedula" name="cedula" required />
+          <button type="submit">Iniciar Sesión</button>
+        </form>
+        <div *ngIf="error" class="error">{{ error }}</div>
+      </div>
+    </div>
+  </main>
+  

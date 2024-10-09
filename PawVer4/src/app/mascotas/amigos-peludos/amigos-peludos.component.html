@@ -1,0 +1,43 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Foto Peludo</th>
+      <th>ID Peludo</th>
+      <th>Nombre Peludo</th>
+      <th>Edad</th>
+      <th>Raza</th>
+      <th>Enfermedad</th>
+      <th>Tratamientos</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let mascota of mascotas">
+      <td><img [src]="mascota.foto" alt="Foto del peludo" class="img-fluid" height="150px" width="150px"></td>
+      <td>{{ mascota.id }}</td>
+      <td>{{ mascota.nombre }}</td>
+      <td>{{ mascota.edad }}</td>
+      <td>{{ mascota.raza }}</td>
+      <td>{{ mascota.enfermedad }}</td>
+      <td>
+        <ul>
+          <li *ngFor="let tratamiento of mascota.tratamientos">
+            <div><strong>Fecha:</strong> {{ tratamiento.fecha }}</div>
+            <div><strong>Descripción:</strong> {{ tratamiento.descripcion }}</div>
+            <div><strong>Veterinario ID:</strong> {{ tratamiento.veterinarioId }}</div>
+          </li>
+        </ul>
+      </td>
+      <td>
+        <a [routerLink]="['/editar-mascota', mascota.id]" class="btn btn-primary">Editar</a>
+      </td>
+      <td>
+        <button (click)="eliminarMascota(mascota.id)" class="btn btn-danger">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Botón de agregar peludo -->
+<button (click)="agregarPeludo()" class="btn btn-success mt-3">Agregar Peludo</button>

@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <h2>Agregar Nueva Mascota</h2>
+  <form (ngSubmit)="agregarMascota()">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" [(ngModel)]="newMascota.nombre" name="nombre" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="edad">Edad:</label>
+      <input type="number" id="edad" [(ngModel)]="newMascota.edad" name="edad" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="raza">Raza:</label>
+      <input type="text" id="raza" [(ngModel)]="newMascota.raza" name="raza" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="enfermedad">Enfermedad:</label>
+      <input type="text" id="enfermedad" [(ngModel)]="newMascota.enfermedad" name="enfermedad" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="foto">URL Foto:</label>
+      <input type="text" id="foto" [(ngModel)]="newMascota.foto" name="foto" required class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="duenoCedula">Cédula del Dueño:</label>
+      <input type="text" id="duenoCedula" [(ngModel)]="newMascota.duenoCedula" name="duenoCedula" required class="form-control">
+    </div>
+    <button type="submit" class="btn btn-success">Agregar Mascota</button>
+    <a [routerLink]="['/amigos-peludos']" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>

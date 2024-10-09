@@ -1,0 +1,105 @@
+/* CSS para la página de login */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Fondo general */
+}
+
+/* Sección de login */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Asegura que el contenido esté centrado verticalmente */
+    padding: 20px;
+}
+
+.login {
+    background-color: #FFFFFF; /* Fondo blanco para el contenedor de login */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px;
+    max-width: 400px; /* Ancho máximo del contenedor */
+    width: 100%; /* Ancho completo */
+}
+
+.login-container {
+    text-align: center; /* Centrar el texto dentro del contenedor */
+}
+
+.login h2 {
+    font-size: 28px; /* Tamaño del texto del título */
+    color: #54B5BE; /* Color del título */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+.login form {
+    display: flex; /* Usar flexbox para el formulario */
+    flex-direction: column; /* Disposición vertical */
+    gap: 15px; /* Espacio entre elementos */
+}
+
+.login label {
+    font-size: 16px; /* Tamaño del texto de la etiqueta */
+    color: #424955; /* Color del texto de la etiqueta */
+    text-align: left; /* Alinear texto a la izquierda */
+    margin-bottom: 5px; /* Espacio inferior */
+}
+
+.login input[type="text"] {
+    padding: 10px; /* Espacio interno */
+    border: 1px solid #ddd; /* Borde suave */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño del texto */
+    width: 100%; /* Ancho completo */
+    box-sizing: border-box; /* Ajustar el tamaño total */
+}
+
+.login button {
+    background-color: #DC3464; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 15px; /* Espacio interno */
+    font-size: 18px; /* Tamaño del texto del botón */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.error {
+    color: red; /* Color rojo para mensajes de error */
+    margin-top: 10px; /* Espacio superior */
+}
+
+.login button:hover {
+    background-color: #c12b55; /* Color de fondo del botón al pasar el cursor */
+}
+
+/* Footer */
+footer {
+    background-color: #54B5BE; /* Color de fondo del footer */
+    padding: 20px; /* Espacio interno */
+    color: #fff; /* Color del texto */
+    text-align: center; /* Centrar texto */
+}
+
+footer .social-media {
+    margin: 20px 0; /* Espacio superior e inferior */
+}
+
+footer .social-media a {
+    color: #fff; /* Color de los enlaces en el footer */
+    margin: 0 10px; /* Espacio lateral */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 20px; /* Tamaño del texto */
+}
+
+footer .social-media a:hover {
+    color: #DC3464; /* Color al pasar el cursor */
+}
+
+footer p {
+    margin: 10px 0; /* Espacio superior e inferior */
+    font-size: 14px; /* Tamaño del texto */
+}

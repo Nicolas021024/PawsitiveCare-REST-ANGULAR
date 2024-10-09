@@ -1,0 +1,74 @@
+/* Estilos generales para el contenedor del formulario */
+.container {
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 40px auto; /* Centramos el formulario con margen automático */
+    padding: 20px; /* Espaciado interno */
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo para el título del formulario */
+h2 {
+    text-align: center; /* Centrar el título */
+    color: #54B5BE; /* Color del título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+/* Estilo general para los campos del formulario */
+.form-group {
+    margin-bottom: 20px; /* Espacio inferior entre grupos de formulario */
+}
+
+.form-group label {
+    display: block; /* Etiquetas como bloques para alinearse correctamente */
+    font-weight: bold; /* Texto en negrita */
+    margin-bottom: 5px; /* Espacio inferior para separar del input */
+    color: #333; /* Color del texto de las etiquetas */
+}
+
+.form-group input {
+    width: 100%; /* Ancho completo para inputs */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris suave */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    box-sizing: border-box; /* Para que el padding no afecte al ancho total */
+}
+
+.form-group input:focus {
+    border-color: #54B5BE; /* Color del borde cuando el campo está en foco */
+    outline: none; /* Quitamos el borde predeterminado del navegador */
+    box-shadow: 0 0 5px rgba(84, 181, 190, 0.5); /* Añadimos una sombra cuando está en foco */
+}
+
+/* Estilos para los botones */
+button {
+    display: inline-block; /* Para que los botones ocupen el espacio necesario */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    margin-right: 10px; /* Espacio entre botones */
+}
+
+/* Estilo para el botón de éxito (Agregar Mascota) */
+.btn-success {
+    background-color: #DC3464; /* Verde de éxito */
+    color: white; /* Texto blanco */
+}
+
+.btn-success:hover {
+    background-color: #DC3464; /* Verde más oscuro al pasar el mouse */
+}
+
+/* Estilo para el botón secundario (Cancelar) */
+.btn-secondary {
+    background-color:  #54B5BE; /* Gris */
+    color: white; /* Texto blanco */
+}
+
+.btn-secondary:hover {
+    background-color: #54B5BE; /* Gris más oscuro al pasar el mouse */
+}
