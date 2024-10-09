@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veterinarios</title>
+    <link rel="stylesheet" href="../css/styles_veterinario.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="../IMG/LOGO PAWSITIVE.png" alt="Pawsitive Care" />
+        <h1 class="text-logo">Pawsitive Care</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/principal">Inicio</a></li>
+          <li><a href="/Servicios">Servicios</a></li>
+          <li><a href="/nosotros">Acerca de nosotros</a></li>
+          <li><a href="horarios.html">Ubicación & horarios</a></li>
+          <li><a href="peludo/all">Amigos Peludos</a></li>
+          <li><a href="/login" class="selected">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="titulo">
+        <h1>Veterinarios</h1>
+        <a
+          type="button"
+          href="http://localhost:8090/veterinario/agregar"
+          class="btn btn-primary"
+        >
+          <img src="../images/agregar.png" alt="Add" height="40px" />
+        </a>
+      </div>
+      <div class="table-responsive">
+        <table
+          id="tabla"
+          class="table table-striped table-bordered border-primary centered-table"
+        >
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Imagen</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Cédula</th>
+              <th scope="col">Especialidad</th>
+              <th scope="col">Atenciones</th>
+              <th scope="col" class="botones">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="veterinario: ${veterinarios}" class="justify-content-center">
+              <td>
+                <img th:src="${veterinario.fotoURL}" alt="veterinario" style="width: 80px; height: 60px" />
+              </td>
+              <td th:text="${veterinario.nombre}"></td>
+              <td th:text="${veterinario.cedula}"></td>
+              <td th:text="${veterinario.especialidad}"></td>
+              <td th:text="${veterinario.numAtenciones}"></td>
+              <td class="botones">
+                <a
+                  class="btn btn-outline-secondary"
+                  th:href="@{http://localhost:8090/veterinario/modificar/{id}(id=${veterinario.id})}"
+                >
+                  <img src="../images/editar.png" alt="Edit" height="40px" />
+                </a>
+                <a
+                  class="btn btn-outline-danger"
+                  th:href="@{http://localhost:8090/veterinario/eliminar/{id}(id=${veterinario.id})}"
+                >
+                  <img src="../images/eliminar.png" alt="Delete" height="40px" />
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <footer>
+      <div class="social-media">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p>&copy; 2024 Pawsitive Care. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>

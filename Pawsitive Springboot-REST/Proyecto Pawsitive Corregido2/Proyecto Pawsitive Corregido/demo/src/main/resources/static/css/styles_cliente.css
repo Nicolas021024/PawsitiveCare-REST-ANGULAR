@@ -1,0 +1,242 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 100px; /* Espacio suficiente para el footer */
+  box-sizing: border-box;
+}
+
+footer {
+  background-color: #6673e1;
+  display: flex;
+  z-index: 1000;
+  margin: 0px 0px;
+  overflow: hidden;
+  flex-direction: row;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+header {
+  /* Define el encabezado como un contenedor flexible */
+  display: flex;
+  /* Distribuye el espacio entre los elementos secundarios */
+  justify-content: space-between;
+  /* Añade un relleno de 10px alrededor del contenido */
+  /* Centra los elementos a lo largo del eje transversal */
+  align-items: center;
+  /* Establece el color de fondo del encabezado */
+  background-color: #6673e1;
+  height: 100px;
+}
+
+header img {
+  height: 80%;
+}
+
+a {
+  /* Añade un margen de 10px alrededor de los enlaces */
+  margin: 10px;
+}
+
+.indice {
+  justify-content: end;
+}
+
+body {
+  margin: 0;
+  margin-bottom: 100px;
+}
+
+header > ul {
+  /* Define la lista dentro del encabezado como un contenedor flexible */
+  display: flex;
+  justify-content: end;
+  margin: 0;
+  padding: 0;
+}
+
+header ul li {
+  align-items: center;
+  display: flex;
+  /* Establece el tamaño de la fuente a 18px */
+  font-size: 18px;
+  /* Elimina el estilo de lista predeterminado */
+  list-style-type: none;
+  /* Elimina la subrayado predeterminado */
+  text-decoration: none;
+  /* Establece el color del texto en negro */
+  color: white;
+}
+
+header li a:hover {
+  /* Cambia el color del texto a rojo al pasar el cursor */
+  color: red;
+  /* Subraya el texto al pasar el cursor */
+  text-decoration: underline;
+}
+
+header a {
+  padding: 3px;
+  color: white;
+  text-decoration: none;
+}
+
+footer img {
+  width: 30px;
+  height: 30px;
+}
+
+#copyright {
+  margin: 0 10px;
+  display: grid;
+  place-items: center;
+}
+
+#contact {
+  margin: 0 50px;
+  display: grid;
+  place-items: center;
+}
+
+#social {
+  /* Alinea el contenido al final del contenedor */
+  justify-content: end;
+  /* Define la sección de redes sociales como un contenedor flexible */
+  display: flex;
+  /* Permite que la sección crezca para llenar el espacio disponible */
+  flex-grow: 1;
+}
+
+#social a {
+  /* Define los enlaces en la sección de redes sociales como contenedores flexibles */
+  display: flex;
+  /* Establece la dirección del eje principal en columna */
+  flex-direction: column;
+  /* Centra los elementos a lo largo del eje transversal */
+  align-items: center;
+  /* Centra los elementos a lo largo del eje principal */
+  justify-content: center;
+  /* Establece el color del texto en blanco */
+  color: white;
+}
+
+#social p {
+  margin: 0;
+  font-size: 15px;
+}
+
+h1 {
+  margin-top: 5px;
+}
+
+.datosPersonales {
+  width: 70%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  margin-left: 300px;
+  font-size: 30px;
+  margin: 0 auto;
+}
+
+.headerTabla {
+  background-color: #6673e1;
+  color: white;
+}
+
+td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #000000;
+  font-size: 30px;
+}
+
+th {
+  border: 1px solid #000000;
+  padding: 8px;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+  color: black;
+}
+
+tr:nth-child(odd) {
+  background-color: #c5c9f3;
+  color: black;
+}
+
+.tituloSeccion {
+  margin-left: 50px;
+  font-size: 40px;
+}
+
+.header-container {
+  display: flex; /* Flexbox para alinear el título y el spinner en una fila */
+  align-items: center; /* Centra verticalmente el spinner con el título */
+  gap: 15px; /* Espacio entre el título y el spinner */
+  margin-bottom: 20px; /* Espacio inferior entre el encabezado y la siguiente sección */
+}
+
+.form-group {
+  margin: 0; /* Elimina márgenes */
+}
+
+.form-select {
+  height: 40px; /* Ajusta la altura del spinner */
+  width: 200px; /* Ajusta el ancho del spinner */
+  font-size: 16px; /* Ajusta el tamaño de la fuente */
+}
+
+
+.seleccionMascota {
+  display: flex; /* Flexbox para alinear elementos en una fila */
+  justify-content: flex-start; /* Alinea los elementos a la izquierda */
+  align-items: center; /* Centra verticalmente */
+  gap: 20px; /* Espacio entre la imagen y la tabla */
+  padding: 20px;
+  margin: 20px auto; /* Centra el contenedor y añade margen superior e inferior */
+  width: 80%; /* Ajusta el ancho del contenedor */
+  max-width: 1000px; /* Ancho máximo para controlar el tamaño */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.mascota-img-container {
+  flex: 0 0 auto; /* Imagen de tamaño fijo */
+  width: 250px; /* Ajusta el ancho de la imagen */
+  margin-right: 20px; /* Añade espacio a la derecha de la imagen */
+}
+
+.mascota {
+  width: 100%; /* Imagen toma todo el ancho del contenedor */
+  height: 200px; /* Mantiene la proporción de la imagen */
+  border-radius: 10px; /* Bordes redondeados */
+  border: #000000 3px solid; /* Borde negro para la imagen */
+}
+
+.mascota-datos-container {
+  flex: 1 1 auto; /* Tabla de datos ajustable */
+}
+
+.datosMascota {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0; /* Elimina márgenes */
+}
+
+.datosMascota th,
+.datosMascota td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px; /* Ajusta el tamaño de la fuente */
+}

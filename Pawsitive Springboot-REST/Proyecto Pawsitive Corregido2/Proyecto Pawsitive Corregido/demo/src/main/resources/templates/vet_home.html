@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio Veterinario - Pawsitive Care</title>
+    <link rel="stylesheet" href="../css/styles_vet_home.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../IMG/LOGO PAWSITIVE.png" alt="Pawsitive Care">
+            <h1 class="text-logo">Pawsitive Care</h1>
+        </div>
+       
+        <nav>
+            <ul>
+                <li><a href="http://localhost:8090/Pawsitive/login">Cerrar sesión</a></li>
+                
+            </ul>
+        </nav>
+       
+    </header>
+
+    <main>
+        <section class="testimonials" id="vet">
+            <h1 th:text="${veterinario.nombre}" class="titulo" id="nombreVet"></h1>
+
+            <h3 class="titulo">Escoja una de las siguientes opciones:</h3>
+            <div class="textSecComents"></div>
+
+            <div class="testimonial-box-container row">
+                <a th:href="@{/mascotas/ver(veterinarioId=${veterinario.id})}" class="col">
+                    <div class="testimonial-box">
+                        <div class="box-top">
+                            <div class="profile">
+                                <div class="name-user">
+                                    <strong>Ver Mascotas</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="client-comment">
+                            <p>Acá puedes ver los perros que se tienen registrados dentro de nuestra veterinaria.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a th:href="@{/clientes/ver(veterinarioId=${veterinario.id})}" class="col">
+                    <div class="testimonial-box">
+                        <div class="box-top">
+                            <div class="profile">
+                                <div class="name-user">
+                                    <strong>Ver Clientes</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="client-comment">
+                            <p>Acá puedes ver los clientes que se tienen registrados dentro de nuestra veterinaria.</p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a th:href="@{/tratamiento/ver(veterinarioId=${veterinario.id})}" class="col">
+                    <div class="testimonial-box">
+                        <div class="box-top">
+                            <div class="profile">
+                                <div class="name-user">
+                                    <strong class="registrados">Registrar Tratamientos</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="client-comment">
+                            <p>Acá puedes registrar el tratamiento dado a una mascota.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a th:href="@{/medicamentos/cargar(veterinarioId=${veterinario.id})}" class="col">
+                    <div class="testimonial-box">
+                        <div class="box-top">
+                            <div class="profile">
+                                <div class="name-user">
+                                    <strong>Cargar Medicamentos</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="client-comment">
+                            <p>Sube un archivo Excel para cargar medicamentos en el sistema.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 Pawsitive Care. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

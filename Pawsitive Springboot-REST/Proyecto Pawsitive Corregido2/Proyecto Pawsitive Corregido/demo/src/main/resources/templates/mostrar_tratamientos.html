@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tratamientos</title>
+  <link rel="stylesheet" href="../css/styles_veterinario.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="../IMG/LOGO PAWSITIVE.png" alt="Pawsitive Care">
+      <h1 class="text-logo">Pawsitive Care</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a th:href="@{/veterinario/{id}(id=${veterinarioId})}">Inicio</a></li>
+        <li><a th:href="@{/tratamiento/agregar(veterinarioId=${veterinarioId})}" class="btn btn-primary">Agregar Tratamiento</a></li>
+
+        <li><a href="http://localhost:8090/Pawsitive/login">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="titulo">
+      <h1>Tratamientos</h1>
+    </div>
+    <div class="table-responsive">
+      <table class="centered-table">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Mascota</th>
+            <th>Veterinario</th>
+            <th>Medicamento</th>
+            <th>Precio de Compra</th>
+            <th>Precio de Venta</th>
+            <th>Unidades</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="tratamiento : ${tratamientos}">
+            <td th:text="${tratamiento.fecha}"></td>
+            <td th:text="${tratamiento.mascota.nombre}"></td>
+            <td th:text="${tratamiento.veterinario.nombre}"></td>
+            <td th:text="${tratamiento.medicamento}"></td>
+            <td th:text="${tratamiento.precioCompra}"></td>
+            <td th:text="${tratamiento.precioVenta}"></td>
+            <td th:text="${tratamiento.unidades}"></td>
+            <td class="botones">
+              <a th:href="@{'/tratamiento/eliminar/' + ${tratamiento.id}}" class="btn btn-danger">Eliminar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="social-media">
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2024 Pawsitive Care. Todos los derechos reservados.</p>
+  </footer>
+</body>
+
+</html>

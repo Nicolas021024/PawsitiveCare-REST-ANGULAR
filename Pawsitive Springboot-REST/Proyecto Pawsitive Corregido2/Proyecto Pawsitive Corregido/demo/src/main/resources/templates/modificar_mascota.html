@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modificar Mascota</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/styles_add_mascota.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="../IMG/LOGO PAWSITIVE.png" alt="Pawsitive Care" />
+        <h1 class="text-logo">Pawsitive Care</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/principal">Inicio</a></li>
+          <li><a href="/Servicios">Servicios</a></li>
+          <li><a href="/nosotros">Acerca de nosotros</a></li>
+          <li><a href="horarios.html">Ubicación & horarios</a></li>
+          <li><a href="peludo/all">Amigos Peludos</a></li>
+          <li><a href="/login" class="selected">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div id="cuadro">
+        <h1>Modificar Mascota</h1>
+        <form
+          th:object="${mascota}"
+          th:action="@{http://localhost:8090/mascotas/modificar/{id}(id=${mascota.id})}?veterinarioId=${veterinarioId}"
+          method="post"
+          id="formModificarMascota"
+        >
+          <div class="row mb-3">
+            <div class="col">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input
+                th:field="*{nombre}"
+                type="text"
+                class="form-control"
+                id="nombre"
+                placeholder="Ingresa el nombre de la mascota"
+                required
+              />
+            </div>
+            <div class="col">
+              <label for="raza" class="form-label">Raza</label>
+              <input
+                th:field="*{raza}"
+                type="text"
+                class="form-control"
+                id="raza"
+                placeholder="Ingresa la raza de la mascota"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label for="edad" class="form-label">Edad</label>
+              <input
+                th:field="*{edad}"
+                type="number"
+                class="form-control"
+                id="edad"
+                placeholder="Ingresa la edad de la mascota"
+                required
+              />
+            </div>
+            <div class="col">
+              <label for="peso" class="form-label">Peso</label>
+              <input
+                th:field="*{peso}"
+                type="number"
+                class="form-control"
+                id="peso"
+                placeholder="Ingresa el peso de la mascota"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label for="enfermedad" class="form-label">Enfermedad</label>
+              <input
+                th:field="*{enfermedad}"
+                type="text"
+                class="form-control"
+                id="enfermedad"
+                placeholder="Ingresa la enfermedad de la mascota"
+              />
+            </div>
+            <div class="col">
+              <label for="cliente" class="form-label">Cliente</label>
+              <select
+                th:field="*{cliente.id}"
+                class="form-select"
+                id="cliente"
+                required
+              >
+                <option value="" disabled selected>
+                  Selecciona el cliente
+                </option>
+                <option
+                  th:each="cliente : ${clientes}"
+                  th:value="${cliente.id}"
+                  th:text="${cliente.nombre}"
+                ></option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="fotoURL" class="form-label">Foto URL</label>
+            <input
+              th:field="*{fotoURL}"
+              type="text"
+              class="form-control"
+              id="fotoURL"
+              placeholder="Ingresa la URL de la imagen de la mascota"
+              required
+            />
+          </div>
+
+          <button
+            class="btn btn-success"
+            type="submit"
+            id="btnModificarMascota"
+          >
+            Modificar
+          </button>
+        </form>
+      </div>
+
+      <div id="imagen">
+        <img src="../images/perro_addmasc.png" alt="perro" height="500px" />
+      </div>
+    </main>
+
+    <footer>
+      <div class="social-media">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p>&copy; 2024 Pawsitive Care. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>

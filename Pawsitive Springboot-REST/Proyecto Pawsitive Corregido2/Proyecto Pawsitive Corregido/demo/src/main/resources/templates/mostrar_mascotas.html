@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mascotas</title>
+    <link rel="stylesheet" href="../css/styles_veterinario.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="../IMG/LOGO PAWSITIVE.png" alt="Pawsitive Care">
+        <h1 class="text-logo">Pawsitive Care</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a th:href="@{/veterinario/{id}(id=${veterinarioId})}">Inicio</a></li>
+          <li><a th:href="@{/tratamiento/ver}">Registrar Tratamientos</a></li>
+          <li><a href="http://localhost:8090/Pawsitive/login">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="titulo">
+        <h1>Mascotas</h1>
+        <a
+          type="button"
+          th:href="@{/mascotas/agregar(veterinarioId=${veterinarioId})}"
+          class="btn btn-primary"
+        >Agregar Mascota</a>
+      </div>
+      <div class="table-responsive">
+        <table id="tabla" class="centered-table">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Imagen</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Raza</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Peso</th>
+              <th scope="col">Enfermedad</th>
+              <th scope="col" class="botones">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="mascota : ${mascotas}" class="justify-content-center">
+              <td>
+                <img th:src="${mascota.fotoURL}" alt="Mascota" style="width: 80px; height: 60px" />
+              </td>
+              <td th:text="${mascota.nombre}"></td>
+              <td th:text="${mascota.raza}"></td>
+              <td th:text="${mascota.edad}"></td>
+              <td th:text="${mascota.peso}"></td>
+              <td th:text="${mascota.enfermedad}"></td>
+              <td class="botones">
+                <a th:href="@{'/mascotas/modificar/' + ${mascota.id} + '?veterinarioId=' + ${veterinarioId}}" class="btn btn-secondary">Editar</a>
+                <a th:href="@{'/mascotas/eliminar/' + ${mascota.id} + '?veterinarioId=' + ${veterinarioId}}" class="btn btn-danger">Eliminar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <footer>
+      <div class="social-media">
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p>&copy; 2024 Pawsitive Care. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>

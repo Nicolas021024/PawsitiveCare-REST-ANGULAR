@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Cliente</title>
+    <link rel="stylesheet" href="../static/css/stylescliente.css" type="text/css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../static/IMG/LOGO PAWSITIVE.png" alt="Pawsitive Care">
+            <h1 class="text-logo">Pawsitive Care</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/principal">Inicio</a></li>
+                <li><a href="/Servicios">Servicios</a></li>
+                <li><a href="/nosotros">Acerca de nosotros</a></li>
+                <li><a href="horarios.html">Ubicación & horarios</a></li>
+                <li><a href="/clientes/ver?veterinarioId=${veterinarioId}">Clientes</a></li>
+                <li><a href="/login" class="selected">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="tituloSeccion">
+            Datos Personales <span th:text="${cliente.nombre}"></span>
+            <br />
+            <br />
+        </h1>
+
+        <table class="datosPersonales">
+            <thead>
+                <tr>
+                    <th class="headerTabla">Datos</th>
+                    <th class="headerTabla">Información Personal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Nombre</th>
+                    <td th:text="${cliente.nombre}"></td>
+                </tr>
+                <tr>
+                    <th>Cédula</th>
+                    <td th:text="${cliente.cedula}"></td>
+                </tr>
+                <tr>
+                    <th>Correo</th>
+                    <td th:text="${cliente.email}"></td>
+                </tr>
+                <tr>
+                    <th>Teléfono</th>
+                    <td th:text="${cliente.celular}"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br />
+        <br />
+        <div class="header-container">
+            <h1 class="tituloSeccion">Datos de las <span>Mascotas</span></h1>
+        </div>
+
+        <div th:each="mascota : ${mascotas}" class="seleccionMascota">
+            <img th:src="${mascota.fotoURL}" alt="Foto de la Mascota" class="mascota"/>
+
+            <table class="datosMascota">
+                <thead>
+                    <tr>
+                        <th class="headerTabla">Datos</th>
+                        <th class="headerTabla">Información Personal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Nombre</th>
+                        <td th:text="${mascota.nombre}"></td>
+                    </tr>
+                    <tr>
+                        <th>Raza</th>
+                        <td th:text="${mascota.raza}"></td>
+                    </tr>
+                    <tr>
+                        <th>Edad</th>
+                        <td th:text="${mascota.edad + ' años'}"></td>
+                    </tr>
+                    <tr>
+                        <th>Peso</th>
+                        <td th:text="${mascota.peso + ' Kg'}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <section class="owners">
+            <h2>Gestión de Clientes</h2>
+            <a href="/clientes/agregar?veterinarioId=${veterinarioId}" class="button">Añadir Nuevo Cliente</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="cliente : ${clientes}">
+                        <td th:text="${cliente.id}"></td>
+                        <td th:text="${cliente.nombre}"></td>
+                        <td th:text="${cliente.celular}"></td>
+                        <td th:text="${cliente.email}"></td>
+                        <td>
+                            <a th:href="@{/clientes/ver/{id}(id=${cliente.id})}">Ver</a>
+                            <a th:href="@{/clientes/modificar/{id}(id=${cliente.id})}?veterinarioId=${veterinarioId}">Modificar</a>
+                            <a th:href="@{/clientes/eliminar/{id}(id=${cliente.id})}?veterinarioId=${veterinarioId}">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 Pawsitive Care. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function deleteOwner(ownerId) {
+            // Implement the JavaScript function to delete an owner
+            // This could involve showing a confirmation dialog and then making an AJAX request
+            if (confirm('¿Estás seguro de que quieres eliminar este cliente?')) {
+                window.location.href = '/clientes/eliminar/' + ownerId;
+            }
+        }
+    </script>
+</body>
+</html>

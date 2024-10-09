@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Mascota - Pawsitive Care</title>
+    <link rel="stylesheet" href="../css/manejopeludos.css" type="text/css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../IMG/LOGO PAWSITIVE.png" alt="Pawsitive Care">
+            <h1 class="text-logo">Pawsitive Care</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../Servicios.html">Servicios</a></li>
+                <li><a href="../nosotros.html">Acerca de nosotros</a></li>
+                <li><a href="../horarios.html">Ubicación & horarios</a></li>
+                <li><a href="peludo/all">Amigos Peludos</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Añadir Nueva Mascota</h2>
+            <form action="../api/add_pet.php" method="POST">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="age">Edad:</label>
+                <input type="number" id="age" name="age" required>
+                
+                <label for="species">Especie:</label>
+                <input type="text" id="species" name="species" required>
+                
+                <button type="submit" class="button">Añadir Mascota</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 Pawsitive Care. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

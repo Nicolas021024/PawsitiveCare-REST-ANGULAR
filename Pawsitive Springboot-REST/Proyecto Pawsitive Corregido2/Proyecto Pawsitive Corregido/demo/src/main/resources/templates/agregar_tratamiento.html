@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agregar Tratamiento - Pawsitive Care</title>
+    <link rel="stylesheet" href="../css/styles_add_treatment.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">   
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../IMG/LOGO PAWSITIVE.png" alt="Pawsitive Care">
+            <h1 class="text-logo">Pawsitive Care</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a th:href="@{/tratamiento/ver}">Ver Tratamientos</a></li>
+                <li><a href="http://localhost:8090/Pawsitive/login">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Agregar Nuevo Tratamiento</h2>
+            <form
+                th:action="@{/tratamiento/agregar}"
+                th:object="${tratamiento}"
+                method="post"
+            >
+                <label for="mascota">Mascota:</label>
+                <select th:field="*{mascota.id}" id="mascota" required>
+                    <option value="" disabled selected>Selecciona la mascota</option>
+                    <option th:each="mascota : ${mascotas}" th:value="${mascota.id}" th:text="${mascota.nombre}"></option>
+                </select>
+                
+                <label for="veterinario">Veterinario:</label>
+                <select th:field="*{veterinario.id}" id="veterinario" required>
+                    <option value="" disabled selected>Selecciona el veterinario</option>
+                    <option th:each="veterinario : ${veterinarios}" th:value="${veterinario.id}" th:text="${veterinario.nombre}"></option>
+                </select>
+
+                <label for="medicamento">Medicamento:</label>
+                <input type="text" th:field="*{medicamento}" id="medicamento" required />
+
+                <label for="precioCompra">Precio de Compra:</label>
+                <input type="number" step="0.01" th:field="*{precioCompra}" id="precioCompra" required />
+
+                <label for="precioVenta">Precio de Venta:</label>
+                <input type="number" step="0.01" th:field="*{precioVenta}" id="precioVenta" required />
+
+                <label for="unidades">Unidades:</label>
+                <input type="number" th:field="*{unidades}" id="unidades" required />
+
+                <button type="submit" class="button">Guardar Tratamiento</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 Pawsitive Care. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

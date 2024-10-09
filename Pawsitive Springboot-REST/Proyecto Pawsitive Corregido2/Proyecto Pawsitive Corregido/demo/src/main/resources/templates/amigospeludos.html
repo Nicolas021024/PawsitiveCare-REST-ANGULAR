@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu círculo de amigos</title>
+    <link rel="stylesheet" href="../css/stylesamigos.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM0sV1FadHlAF5WjdlPaF5O/vz+biHBiSHX5v6M" crossorigin="anonymous">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <img src="../IMG/LOGO PAWSITIVE.png" alt="Pawsitive Care">
+        <h1 class="text-logo">Pawsitive Care</h1>
+    </div>
+    <nav>
+        <ul>
+          <li><a href="/principal">Inicio</a></li>
+                <li><a href="/Servicios">Servicios</a></li>
+                <li><a href="/nosotros">Acerca de nosotros</a></li>
+                <li><a href="horarios.html">Ubicación & horarios</a></li>
+                <li><a href="/amigospeludos">Amigos Peludos</a></li>
+                <li><a href="/login" class="selected">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h1>Lista de tus amigos peludos</h1>
+<table class="table table-striped">
+  <thead class="tableHead">
+    <tr>
+      <th>Foto Peludo</th>
+      <th>ID Peludo</th>
+      <th>Nombre Peludo</th>
+      <th>Edad</th>
+      <th>Raza</th>
+      <th>ID Dueño</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Itera sobre la lista de mascotas -->
+    <tr th:each="peludo : ${peludos}" >
+      <td>
+        <img
+          th:src="${peludo.fotoPeludo}"
+          alt="Foto del peludo"
+          class="img-fluid"
+          height="150px"
+          width="150px"
+        />
+      </td>
+      <td th:text="${peludo.idPeludo}"></td>
+      <td th:text="${peludo.nombrePeludo}"></td>
+      <td th:text="${peludo.edadPeludo}"></td>
+      <td th:text="${peludo.razaPeludo}"></td>
+      <td>
+        <a
+          type="button"
+          class="btn btn-primary"
+          th:href="@{/peludo/{id}(id=${peludo.idPeludo})}"
+        >Editar</a>
+      </td>
+      <td>
+        <a
+          type="button"
+          class="btn btn-danger"
+          th:href="@{/peludo/delete/{id}(id=${peludo.idPeludo})}"
+        >Eliminar</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<a type="button" class="btn btn-primary" th:href="@{/peludo/add}">Añadir peludo</a>
+
+<footer>
+  <div class="social-media">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+  <p>&copy; 2024 Pawsitive Care. Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>

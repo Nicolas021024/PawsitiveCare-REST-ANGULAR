@@ -1,0 +1,176 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #FFFFFF;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.logo img {
+    width: 65px;
+    height: auto;
+}
+
+.logo h1 {
+    position: static;
+    top: 6px;
+    left: 70px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+    color: #54B5BEFF;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #424955;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+nav ul li a:hover,
+nav ul li a.selected {
+    background-color: #54B5BE;
+    color: #fff;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+.tituloSeccion {
+    font-family: Poppins, sans-serif;
+    font-size: 36px;
+    color: #54B5BE;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #54B5BE;
+    color: white;
+}
+
+.table td {
+    background-color: white;
+}
+
+.seleccionMascota {
+    margin-bottom: 40px;
+}
+
+.seleccionMascota img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+.datosMascota {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 170px);
+    margin-left: 20px;
+}
+
+.owners {
+    margin-top: 40px;
+}
+
+.owners h2 {
+    font-family: Poppins, sans-serif;
+    font-size: 36px;
+    color: #54B5BE;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.owners a.button {
+    background-color: #DC3464;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.owners a.button:hover {
+    background-color: #c12b55;
+}
+
+/* Footer */
+footer {
+    background-color: #54B5BE;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+footer .social-media {
+    margin: 20px 0;
+}
+
+footer .social-media a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+footer .social-media a:hover {
+    color: #DC3464;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 14px;
+}
